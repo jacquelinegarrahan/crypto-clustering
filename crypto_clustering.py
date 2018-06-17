@@ -1,16 +1,28 @@
-''' For running cluster analysis against coins traded on exchanges'''
 
+#!/usr/bin/env python3
+"""
+=====================================
+Clustering of crytocurrencies 
+=====================================
+by Jacqueline Garrahan
 
+"""
+import os, sys
+import os.path
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+print(sys.path)
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
 from sklearn import cluster, covariance, manifold, preprocessing
-from API_calls.gdax_call import get_variation, convert_datetime, api_call
-from poloniex import Poloniex
+from api_calls.gdax_call import get_variation, convert_datetime, api_call
+from api_calls.poloniex import Poloniex
 import csv
 
 
-GDAX_coin_dict = { 'BTC': 'Bitcoin'}
+GDAX_coin_dict = { 'BTC': 'Bitcoin', 'ETH': 'Ethereum'}
 
 USDT_coin_dict = {'BTC': 'Bitcoin', 'ETH': 'Ethereum', 'BCH': 'Bitcoin Cash',  'LTC': 'Litecoin', 'XRP': 'Ripple',
              'XMR': 'Monero', 'ZEC': 'ZCash', 'ETC': 'Ethereum Classic', 'DASH': 'Dash', 'NXT': 'NXT',
@@ -196,4 +208,4 @@ def run_and_plot_evolution(coin_dict, anchor_coin, start_date, end_date, period,
     return clusters
 
 if __name__ == "__main__":
-        run_and_plot(GDAX_coin_dict, 'USD', [2017, 1, 1], [2017, 2, 5], 5000)
+        run_and_plot(XMR_coin_dict, 'USD', [2017, 1, 1], [2017, 2, 5], 5000)
