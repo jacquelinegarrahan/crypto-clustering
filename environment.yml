@@ -1,0 +1,16 @@
+name: crypto-clustering
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - matplotlib
+  - scikit-learn
+  - scipy
+  - numpy
+  - pyparsing
+  - six
+  - requests
+  - pip
+  - pip:
+      - poloniex
+      - gdax
