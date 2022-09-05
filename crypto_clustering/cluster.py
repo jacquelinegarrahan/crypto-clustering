@@ -12,7 +12,6 @@ import os.path
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-print(sys.path)
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.collections import LineCollection
